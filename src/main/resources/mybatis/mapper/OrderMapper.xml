@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.neuedu.demo.mapper.OrderMapper">
+		<select id="queryAllOrder" resultType="order">
+			select orderid,customid,shopname,shopcount,total,date
+			from boot_order
+		</select>
+		<delete id="deleteOrder" parameterType="integer">
+			delete from boot_order where orderid = #{oid}
+		</delete> 
+		
+		<update id="editOrder" parameterType="order">
+			update boot_order set orderid = #{orderid} , customid = #{customid} , shopname = #{shopname} , shopcount = #{shopcount} , total= #{total} where orderid = #{orderid}
+		</update>
+		 
+		<insert id="addOrder" parameterType="order">
+			insert into boot_order(orderid,customid,shopname,shopcount,total) value(#{orderid},#{customid},#{shopname},#{shopcount},#{total})
+		</insert> 
+		<select id="getOrderById" parameterType="integer" resultType="order">
+			select orderid,customid,shopname,shopcount,total,date
+			from  boot_order where orderid = #{oid}
+		</select>
+	</mapper>

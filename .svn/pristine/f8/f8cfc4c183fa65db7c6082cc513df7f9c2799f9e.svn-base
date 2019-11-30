@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.demo.mapper.CatMapper">
+
+  <!-- public Cat queryCatById(Integer id); -->
+  <select id="queryCatById" resultType="cat" parameterType="int">
+  	select id,name,password from cat where id=#{id}
+  </select>
+ <select id="selectAll" resultType="cat">
+  	select id,name,password from cat
+  </select>
+  <insert id="insertCat" parameterType="cat">
+  insert into cat(name,password) values(#{name},#{password})
+  </insert>
+  
+  <update id="updateCat" parameterType="cat">
+  update cat set name=#{name},password=#{password} where id=#{id}
+  </update>
+  
+  <delete id="deleteCat" parameterType="int">
+  delete from cat where id=#{id}
+  </delete>
+  
+</mapper>

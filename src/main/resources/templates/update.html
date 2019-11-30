@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>修改页面</title>
+</head>
+<body>
+<form th:action="@{/updateCat}" th:object="${cat}" method="POST">
+	id:<input type="text" th:field="*{id}" value=""/><br>
+	name:<input type="text" th:field="*{name}" value=""/><br>
+	password:<input type="text" th:field="*{password}" value=""/><br>
+
+		<input type="submit" value="提交" />
+	</form>
+</body>
+</html>

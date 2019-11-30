@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>添加商品页面</title>
+</head>
+<body>
+<!-- Thymeleaf标签使用的规则：
+1.内嵌使用
+2.使用的表达式一般有前缀：th
+3.希望达成什么功能，  th:text  文本替换效果    th:href  替换href属性的值
+ -->
+ 
+<form th:action="@{/add}" method="post">
+
+订单Id <input type="text" name="orderid"/><br>
+顾客Id <input type="text" name="customid"/><br>
+商品名 <input type="text" name="shopname"/><br>
+商品数量<input type="text" name="shopcount"/><br>
+商品总价	<input type="text" name="total"/><br> 
+<input type="submit" value="submit" /><br>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+企业给定的sql脚本，如何针对该sql脚本完成crud:
+
+1.确定有mysql数据库，然后创建数据库，导入sql脚本
+
+
+2.使用mybatis框架提供的自动生成实体类，mapper映射文件和mapper接口功能
+
+
+3.创建springboot工程，然后集成web mybatis mysql Thymeleaf  分页等环境
+
+
+4.在默认配置文件application.properties中配置：
+工程信息：
+数据库连接信息：
+mybatis配置信息：
+thymeleaf模板信息：
+
+5.创建基本的目录结构：
+实体包:com.neuedu.demo.domain
+dao接口包：com.neuedu.demo.mapper
+service包：com.neuedu.demo.service
+controller包：com.neuedu.demo.controller
+
+html页面 (基于Thymeleaf模板实现,放置在resources/templates下):add.html,update.html,list.html
+
+6.编写代码并测试，顺序如下：
+dao接口的增删改查方法
+service类中的增删改查方法
+controller类中的增删改查方法
+页面的增删改查实现
+
+7.测试

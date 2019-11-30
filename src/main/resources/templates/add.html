@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>添加页面</title>
+</head>
+<body>
+		<form th:action="@{/addCat}" method="post">
+			name:<input type="text" name="name" /><br> 
+			password:<input
+				type="text" name="password" /><br> <input type="submit"
+				value="submit" /><br>
+		</form>
+
+</body>
+</html>

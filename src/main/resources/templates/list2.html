@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>商品列表页面</title>
+</head>
+<body>
+	<!-- 如何迭代访问集合数据呢？ -->
+
+	<table>
+		<tr>
+			<th>订单Id</th>
+			<th>顾客Id</th>
+			<th>商品名</th>
+			<th>商品数量</th>
+			<th>商品总价</th>
+			<th>交易日期</th>
+		</tr>
+		<tr th:each="o:${orders}">
+			<td th:text="${o.orderid}"></td>
+			<td th:text="${o.customid}"></td>
+			<td th:text="${o.shopname}"></td>
+			<td th:text="${o.shopcount}"></td>
+			<td th:text="${o.total}"></td>
+			<td th:text="${#dates.format(o.date, 'yyyy-MM-dd')}"></td>
+			<td><a th:href="@{/deleteOrder(oid=${o.orderid})}">delete</a>||<a th:href="@{/toUpdateOrder(oid=${o.orderid})}">toUpdate</a></td>
+		</tr>
+	 
+		<a th:href="@{/toAdd}">添加</a>
+	</table>
+</body>
+</html>

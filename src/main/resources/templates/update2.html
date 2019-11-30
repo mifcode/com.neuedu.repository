@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>商品更新页面</title>
+</head>
+<body>
+<!-- 在更新页面如何获取某个对象的信息，使用   th:object 和   th:field  标签 
+th:object标签可以很好的处理后台传给页面多个对象的问题
+然后th:field标签的使用一定要包裹在th：object寄生的标签内，然后直接使用*{属性名}问对象拿值就可以了
+
+-->
+<form action="" th:action="@{/update}" method="post" th:object="${order}">
+订单Id:<input type="text" name="" value="" th:field="*{orderid}"/><br>
+顾客Id:<input type="text" name="" value="" th:field="*{customid}"/><br>
+商品名:<input type="text" name="" value="" th:field="*{shopname}"/><br>
+商品数量:<input type="text" name="" value="" th:field="*{shopcount}"/><br>
+商品总价:<input type="text" name="" value="" th:field="*{total}"/><br>
+
+<input type="submit" value="update"/>
+</form>
+
+</body>
+</html>

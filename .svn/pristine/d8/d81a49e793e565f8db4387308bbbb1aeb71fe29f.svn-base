@@ -1,0 +1,16 @@
+## web app message
+server.port=7078
+server.servlet.context-path=/demo_crud
+
+## Mybatis \u914D\u7F6E
+mybatis.typeAliasesPackage=com.neuedu.demo.domain
+mybatis.mapperLocations=classpath:mybatis/mapper/*Mapper.xml
+
+#spring dataSource
+spring.datasource.url=jdbc:mysql://localhost:3306/test?serverTimezone=UTC&characterEncoding=utf-8
+spring.datasource.username=root
+spring.datasource.password=123456
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+	
+
